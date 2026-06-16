@@ -1,0 +1,730 @@
+[
+  {
+    "name": "tens_tblViolation_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblViolation",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblViolation",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblViolation",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblUnemploymentPeriod_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblUnemploymentPeriod",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblUnemploymentPeriod",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblUnemploymentPeriod",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblTruckingSchool_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblTruckingSchool",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblTruckingSchool",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblTruckingSchool",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblTenstreetData_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblTenstreetData",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblTenstreetData",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblTenstreetData",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblSchool_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblSchool",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblSchool",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblSchool",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblProviderFaxAttempt_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblProviderFaxAttempt",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblProviderFaxAttempt",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblProviderFaxAttempt",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblProviderActivityLogEntry_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblProviderActivityLogEntry",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblProviderActivityLogEntry",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblProviderActivityLogEntry",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblProvider_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblProvider",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblProvider",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblProvider",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblPersonalData_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblPersonalData",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblPersonalData",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblPersonalData",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblNote_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblNote",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblNote",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblNote",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblMotorVehicleRecord_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblMotorVehicleRecord",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblMotorVehicleRecord",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblMotorVehicleRecord",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblMilitary_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblMilitary",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblMilitary",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblMilitary",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblLicense_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblLicense",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblLicense",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblLicense",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblLicenceEndorsement_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblLicenceEndorsement",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblLicenceEndorsement",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblLicenceEndorsement",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblJobRequisition_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblJobRequisition",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblJobRequisition",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblJobRequisition",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblForm_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblForm",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblForm",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblForm",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblEqualOpportunityQuestion_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblEqualOpportunityQuestion",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblEqualOpportunityQuestion",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblEqualOpportunityQuestion",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblEmployer_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblEmployer",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblEmployer",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblEmployer",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblDriverChangeLog_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblDriverChangeLog",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblDriverChangeLog",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblDriverChangeLog",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblDqfDocument_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblDqfDocument",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblDqfDocument",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblDqfDocument",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblDocument_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblDocument",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblDocument",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblDocument",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblCustomQuestion_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblCustomQuestion",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblCustomQuestion",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblCustomQuestion",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblCustomDataElement_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblCustomDataElement",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblCustomDataElement",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblCustomDataElement",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblCriminalRecord_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblCriminalRecord",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblCriminalRecord",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblCriminalRecord",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblAllPostalAddress_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblAllPostalAddress",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblAllPostalAddress",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblAllPostalAddress",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblAccident_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblAccident",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_tblAccident",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_tblAccident",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_sysSamples_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_sysSamples",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_sysSamples",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_sysSamples",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_sysFileList_1",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_sysFileList",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "tens_sysFileList",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bronze/tens_sysFileList",
+        "itemId": "66031731-f476-b709-4861-7f9bba2f786a",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  }
+]
