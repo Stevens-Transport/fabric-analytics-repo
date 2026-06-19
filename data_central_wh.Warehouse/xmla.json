@@ -75887,6 +75887,228 @@
         ]
       },
       {
+        "name": "ibmi_preplan_overrides",
+        "sourceLineageTag": "[silver].[ibmi_preplan_overrides]",
+        "columns": [
+          {
+            "name": "preplan_overrides_load_number",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_dispatch",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_dispatch",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_dispatch",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_planned_truck_number",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_planned_truck_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_planned_truck_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_model_recommended_truck_number",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_model_recommended_truck_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_model_recommended_truck_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_unplanned",
+            "dataType": "string",
+            "sourceColumn": "is_unplanned",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_unplanned",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_model_plan_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_model_plan_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_model_plan_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_override_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_override_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_override_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_override_description",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_override_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_override_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_dispatch_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_overrides_dispatch_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "preplan_overrides_dispatch_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_create_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_overrides_create_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "preplan_overrides_create_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_model_recommended_at_dispatch",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_model_recommended_at_dispatch",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_model_recommended_at_dispatch",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_model_plan_at_dispatch",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_model_plan_at_dispatch",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_model_plan_at_dispatch",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_user_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_overrides_area_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_overrides_area_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_overrides_area_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "ibmi_preplan_overrides",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "ibmi_region_master",
         "sourceLineageTag": "[silver].[ibmi_region_master]",
         "columns": [
@@ -75935,6 +76157,285 @@
           {
             "name": "IsTableInBiModel",
             "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "ibmi_repowers",
+        "sourceLineageTag": "[silver].[ibmi_repowers]",
+        "columns": [
+          {
+            "name": "repowers_truck_number_1",
+            "dataType": "string",
+            "sourceColumn": "repowers_truck_number_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_truck_number_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_load_number_1",
+            "dataType": "string",
+            "sourceColumn": "repowers_load_number_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_load_number_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_dispatch_1",
+            "dataType": "string",
+            "sourceColumn": "repowers_dispatch_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_dispatch_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_truck_number_2",
+            "dataType": "string",
+            "sourceColumn": "repowers_truck_number_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_truck_number_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_load_number_2",
+            "dataType": "string",
+            "sourceColumn": "repowers_load_number_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_load_number_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_dispatch_2",
+            "dataType": "string",
+            "sourceColumn": "repowers_dispatch_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_dispatch_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_status",
+            "dataType": "string",
+            "sourceColumn": "repowers_status",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_status_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "repowers_status_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "repowers_status_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_swap_user_code",
+            "dataType": "string",
+            "sourceColumn": "repowers_swap_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_swap_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_swap_location_code",
+            "dataType": "string",
+            "sourceColumn": "repowers_swap_location_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_swap_location_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_swap_stop_number",
+            "dataType": "string",
+            "sourceColumn": "repowers_swap_stop_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_swap_stop_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_swap_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "repowers_swap_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "repowers_swap_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_next_location_code_post_swap_1",
+            "dataType": "string",
+            "sourceColumn": "repowers_next_location_code_post_swap_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_next_location_code_post_swap_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_next_location_code_post_swap_2",
+            "dataType": "string",
+            "sourceColumn": "repowers_next_location_code_post_swap_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_next_location_code_post_swap_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_swap_reason_code",
+            "dataType": "string",
+            "sourceColumn": "repowers_swap_reason_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_swap_reason_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_create_user_code",
+            "dataType": "string",
+            "sourceColumn": "repowers_create_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "repowers_create_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "repowers_create_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "repowers_create_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "repowers_create_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_chargeable_to_driver",
+            "dataType": "string",
+            "sourceColumn": "is_chargeable_to_driver",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_chargeable_to_driver",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "ibmi_repowers",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
           }
         ]
       },
