@@ -81490,6 +81490,304 @@
         ]
       },
       {
+        "name": "ibmi_preplan_tracking",
+        "sourceLineageTag": "[silver].[ibmi_preplan_tracking]",
+        "columns": [
+          {
+            "name": "preplan_tracking_load_number",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_truck_number",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_truck_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_truck_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_driver_seat_1",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_driver_seat_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_driver_seat_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_driver_seat_2",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_driver_seat_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_driver_seat_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_team_status_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_team_status_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_team_status_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_dm",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_dm",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_dm",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_dmol",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_dmol",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_dmol",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_sent_date",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_sent_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "preplan_tracking_sent_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_sent_time",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_sent_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "preplan_tracking_sent_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_sent_user_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_sent_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_sent_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_response_date",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_response_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "preplan_tracking_response_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_response_time",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_response_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "preplan_tracking_response_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_accepted",
+            "dataType": "string",
+            "sourceColumn": "is_accepted",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_accepted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_cancel_date",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_cancel_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "preplan_tracking_cancel_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_cancel_time",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_cancel_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "preplan_tracking_cancel_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_cancel_user_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_tracking_cancel_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_tracking_cancel_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_canceled",
+            "dataType": "string",
+            "sourceColumn": "is_canceled",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_canceled",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_create_date",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_create_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "preplan_tracking_create_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_tracking_create_time",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_tracking_create_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "preplan_tracking_create_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "ibmi_preplan_tracking",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "ibmi_region_master",
         "sourceLineageTag": "[silver].[ibmi_region_master]",
         "columns": [
