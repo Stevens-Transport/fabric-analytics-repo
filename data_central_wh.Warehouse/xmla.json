@@ -76341,6 +76341,282 @@
         ]
       },
       {
+        "name": "ibmi_late_fees",
+        "sourceLineageTag": "[silver].[ibmi_late_fees]",
+        "columns": [
+          {
+            "name": "late_fees_load_number",
+            "dataType": "string",
+            "sourceColumn": "late_fees_load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_dispatch",
+            "dataType": "string",
+            "sourceColumn": "late_fees_dispatch",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_dispatch",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_truck_number",
+            "dataType": "string",
+            "sourceColumn": "late_fees_truck_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_truck_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_driver_seat_1",
+            "dataType": "string",
+            "sourceColumn": "late_fees_driver_seat_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_driver_seat_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_driver_seat_2",
+            "dataType": "string",
+            "sourceColumn": "late_fees_driver_seat_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_driver_seat_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_create_date",
+            "dataType": "dateTime",
+            "sourceColumn": "late_fees_create_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "late_fees_create_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_create_user_code",
+            "dataType": "string",
+            "sourceColumn": "late_fees_create_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_create_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_house_late",
+            "dataType": "double",
+            "sourceColumn": "late_fees_house_late",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "late_fees_house_late",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_reason_why",
+            "dataType": "string",
+            "sourceColumn": "late_fees_reason_why",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_reason_why",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_fee_description",
+            "dataType": "string",
+            "sourceColumn": "late_fees_fee_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_fee_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_reimbursment_flag",
+            "dataType": "string",
+            "sourceColumn": "late_fees_reimbursment_flag",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_reimbursment_flag",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_alternative",
+            "dataType": "string",
+            "sourceColumn": "late_fees_alternative",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_alternative",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_last_updated_date",
+            "dataType": "dateTime",
+            "sourceColumn": "late_fees_last_updated_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "late_fees_last_updated_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_last_updated_user_code",
+            "dataType": "string",
+            "sourceColumn": "late_fees_last_updated_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fees_last_updated_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_verified",
+            "dataType": "string",
+            "sourceColumn": "is_verified",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_verified",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_amount",
+            "dataType": "double",
+            "sourceColumn": "late_fees_amount",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "late_fees_amount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "late_fees_stop_number",
+            "dataType": "double",
+            "sourceColumn": "late_fees_stop_number",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "late_fees_stop_number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "ibmi_late_fees",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "ibmi_load",
         "sourceLineageTag": "[silver].[ibmi_load]",
         "columns": [
