@@ -40562,6 +40562,282 @@
         ]
       },
       {
+        "name": "vw_late_fees",
+        "sourceLineageTag": "[gold].[vw_late_fees]",
+        "columns": [
+          {
+            "name": "load_number",
+            "dataType": "string",
+            "sourceColumn": "load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dispatch_number",
+            "dataType": "string",
+            "sourceColumn": "dispatch_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "dispatch_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "truck_number",
+            "dataType": "string",
+            "sourceColumn": "truck_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "truck_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "primary_driver_code",
+            "dataType": "string",
+            "sourceColumn": "primary_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "primary_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "secondary_driver_code",
+            "dataType": "string",
+            "sourceColumn": "secondary_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "secondary_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "created_date",
+            "dataType": "dateTime",
+            "sourceColumn": "created_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "created_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "created_by_user_code",
+            "dataType": "string",
+            "sourceColumn": "created_by_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "created_by_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "house_late_flag",
+            "dataType": "double",
+            "sourceColumn": "house_late_flag",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "house_late_flag",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "late_fee_reason",
+            "dataType": "string",
+            "sourceColumn": "late_fee_reason",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fee_reason",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fee_description",
+            "dataType": "string",
+            "sourceColumn": "late_fee_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_fee_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "reimbursement_flag",
+            "dataType": "string",
+            "sourceColumn": "reimbursement_flag",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "reimbursement_flag",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "alternative_description",
+            "dataType": "string",
+            "sourceColumn": "alternative_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "alternative_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "last_updated_date",
+            "dataType": "dateTime",
+            "sourceColumn": "last_updated_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "last_updated_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "last_updated_by_user_code",
+            "dataType": "string",
+            "sourceColumn": "last_updated_by_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "last_updated_by_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_verified",
+            "dataType": "string",
+            "sourceColumn": "is_verified",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_verified",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_fee_amount",
+            "dataType": "double",
+            "sourceColumn": "late_fee_amount",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "late_fee_amount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "stop_number",
+            "dataType": "double",
+            "sourceColumn": "stop_number",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "stop_number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_late_fees",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "vw_loaded_call_contact_by_load",
         "sourceLineageTag": "[gold].[vw_loaded_call_contact_by_load]",
         "columns": [
@@ -42892,6 +43168,304 @@
             "source": {
               "type": "entity",
               "entityName": "vw_preplan_overrides",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "vw_preplan_tracking",
+        "sourceLineageTag": "[gold].[vw_preplan_tracking]",
+        "columns": [
+          {
+            "name": "load_number",
+            "dataType": "string",
+            "sourceColumn": "load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "truck_number",
+            "dataType": "string",
+            "sourceColumn": "truck_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "truck_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "primary_driver_code",
+            "dataType": "string",
+            "sourceColumn": "primary_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "primary_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "secondary_driver_code",
+            "dataType": "string",
+            "sourceColumn": "secondary_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "secondary_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "team_status_code",
+            "dataType": "string",
+            "sourceColumn": "team_status_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "team_status_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "driver_manager_code",
+            "dataType": "string",
+            "sourceColumn": "driver_manager_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "driver_manager_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "driver_manager_of_logistics_code",
+            "dataType": "string",
+            "sourceColumn": "driver_manager_of_logistics_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "driver_manager_of_logistics_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_sent_date",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_sent_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "preplan_sent_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_sent_time",
+            "dataType": "dateTime",
+            "sourceColumn": "preplan_sent_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "preplan_sent_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preplan_sent_by_user_code",
+            "dataType": "string",
+            "sourceColumn": "preplan_sent_by_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preplan_sent_by_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "response_date",
+            "dataType": "dateTime",
+            "sourceColumn": "response_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "response_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "response_time",
+            "dataType": "dateTime",
+            "sourceColumn": "response_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "response_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_accepted",
+            "dataType": "string",
+            "sourceColumn": "is_accepted",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_accepted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cancel_date",
+            "dataType": "dateTime",
+            "sourceColumn": "cancel_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "cancel_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cancel_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cancel_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cancel_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "canceled_by_user_code",
+            "dataType": "string",
+            "sourceColumn": "canceled_by_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "canceled_by_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_canceled",
+            "dataType": "string",
+            "sourceColumn": "is_canceled",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_canceled",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "created_date",
+            "dataType": "dateTime",
+            "sourceColumn": "created_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "created_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "created_time",
+            "dataType": "dateTime",
+            "sourceColumn": "created_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "created_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_preplan_tracking",
               "expressionSource": "DatabaseQuery",
               "schemaName": "gold"
             }
