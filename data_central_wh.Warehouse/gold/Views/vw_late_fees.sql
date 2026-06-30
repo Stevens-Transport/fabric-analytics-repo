@@ -1,5 +1,5 @@
--- Auto Generated (Do not modify) EDC1A97EB6B192A7B0ABB2C33734CD3BFB11CBC1B2D8864E135BE9D72B6C96A1
-CREATE   VIEW [gold].[vw_late_fees]
+-- Auto Generated (Do not modify) 04604A96FC42FBFC6717110B7FB2D39EDDE75D0388955FE519E9BFE9F59CA607
+CREATE       VIEW [gold].[vw_late_fees]
 AS
 
 SELECT
@@ -7,15 +7,15 @@ SELECT
     , [late_fees_dispatch]                 AS [dispatch_number]
     , [late_fees_truck_number]             AS [truck_number]
 
-    , [late_fees_driver_seat_1]            AS [primary_driver_code]
-    , [late_fees_driver_seat_2]            AS [secondary_driver_code]
+    , [late_fees_driver_seat_1]            AS [first_seat_driver_code]
+    , [late_fees_driver_seat_2]            AS [second_seat_driver_code]
 
     , [late_fees_create_date]              AS [created_date]
     , [late_fees_create_user_code]         AS [created_by_user_code]
 
-    , [late_fees_house_late]               AS [house_late_flag]
-    , [late_fees_reason_why]               AS [late_fee_reason]
-    , [late_fees_fee_description]          AS [late_fee_description]
+    , [late_fees_house_late]               AS [hours_late]
+    , [late_fees_reason_why]               AS [late_reason]
+    , [late_fees_fee_description]          AS [late_rules]
 
     , [late_fees_reimbursment_flag]        AS [reimbursement_flag]
     , [late_fees_alternative]              AS [alternative_description]

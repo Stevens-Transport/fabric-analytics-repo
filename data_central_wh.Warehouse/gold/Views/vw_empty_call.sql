@@ -1,5 +1,5 @@
--- Auto Generated (Do not modify) BADB37E6316DAA862EC4CF47C1751A823245DBAA8FED6C89F8E0A2E50DB67973
-CREATE   VIEW [gold].[vw_empty_call]
+-- Auto Generated (Do not modify) BADD59CC373A7BDAB0311A20CB89BA9491ADE0BDC5D485359D06837C4FCCD1F5
+CREATE       VIEW [gold].[vw_empty_call]
 AS
 
 SELECT
@@ -9,8 +9,8 @@ SELECT
     , [empty_call_call_number]         AS [call_number]
 
     , [empty_call_trailer_number]      AS [trailer_number]
-    , [empty_call_seat_1_driver_code]  AS [primary_driver_code]
-    , [empty_call_seat_2_driver_code]  AS [secondary_driver_code]
+    , [empty_call_seat_1_driver_code]  AS [first_seat_driver_code]
+    , [empty_call_seat_2_driver_code]  AS [second_seat_driver_code]
 
     , [empty_call_contact_date]        AS [contact_date]
     , [empty_call_contact_time]        AS [contact_time]
