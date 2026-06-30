@@ -726,5 +726,653 @@
         "artifactType": "MountedRelationalDatabase"
       }
     }
+  },
+  {
+    "name": "risk_manager_downloaded_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_manager_downloaded_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_manager_attachments_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_manager_attachments_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_location_description_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_location_description_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_involved_vehicle_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_involved_vehicle_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_involved_parties_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_involved_parties_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_involved_driver_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_involved_driver_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_involved_adjuster_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_involved_adjuster_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_hazmat_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_hazmat_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_file_comment_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_file_comment_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_expectedsalvsubrohist_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_expectedsalvsubrohist_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_expectedsalvagesubro_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_expectedsalvagesubro_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_exceptn_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_exceptn_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_employeetable_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_employeetable_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_dvrbysch_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_dvrbysch_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_drso820_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_drso820_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_drschool_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_drschool_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_drs916_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_drs916_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_drs1117_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_drs1117_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_drlossesreptsent_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_drlossesreptsent_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_driverpinlog_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_driverpinlog_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "risk_customertable_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/risk_customertable_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_empty_call_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_empty_call_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_edi_status_history_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_edi_status_history_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_edi_reject_details_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_edi_reject_details_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_edi_processing_history_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_edi_processing_history_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_edi_order_history_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_edi_order_history_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_earnings_history_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_earnings_history_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_driver_term_talks_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_driver_term_talks_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_driver_home_history_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_driver_home_history_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_driver_extension_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_driver_extension_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_driver_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_driver_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_driver_bio_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_driver_bio_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_division_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_division_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_deduction_history_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_deduction_history_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_customer_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_customer_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_commodity_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_commodity_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_comments_intermodal_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_comments_intermodal_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_city_master_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_city_master_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_order_bronze_new",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_order_bronze_new",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_order_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_order_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_ordbill_v2_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_ordbill_v2_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_ordbill_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_ordbill_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_billing_bronze_new",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_billing_bronze_new",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_billing_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_billing_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_arfile_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_arfile_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_cd_ar_extension_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_cd_ar_extension_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_business_unit_master_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_business_unit_master_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_billing_incremental_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_billing_incremental_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_billing_bronze_new",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_billing_bronze_new",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_billing_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_billing_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_autorated_loads_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_autorated_loads_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_arfile_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_arfile_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_area_master_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_area_master_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
+  },
+  {
+    "name": "ibmi_ar_extension_bronze",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/ibmi_ar_extension_bronze",
+        "itemId": "f9a73da1-08e4-4f3d-a67f-74623bfde721",
+        "workspaceId": "a6d2c31b-0b03-4c60-a258-c2664c56fe3d"
+      }
+    }
   }
 ]
