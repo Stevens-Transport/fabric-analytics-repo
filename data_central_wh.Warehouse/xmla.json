@@ -24764,34 +24764,6 @@
             ]
           },
           {
-            "name": "primary_driver_code",
-            "dataType": "string",
-            "sourceColumn": "primary_driver_code",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "primary_driver_code",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "secondary_driver_code",
-            "dataType": "string",
-            "sourceColumn": "secondary_driver_code",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "secondary_driver_code",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "contact_date",
             "dataType": "dateTime",
             "sourceColumn": "contact_date",
@@ -24933,6 +24905,34 @@
             "sourceColumn": "hub_flag",
             "sourceProviderType": "varchar",
             "sourceLineageTag": "hub_flag",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "first_seat_driver_code",
+            "dataType": "string",
+            "sourceColumn": "first_seat_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "first_seat_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "second_seat_driver_code",
+            "dataType": "string",
+            "sourceColumn": "second_seat_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "second_seat_driver_code",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -40608,34 +40608,6 @@
             ]
           },
           {
-            "name": "primary_driver_code",
-            "dataType": "string",
-            "sourceColumn": "primary_driver_code",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "primary_driver_code",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "secondary_driver_code",
-            "dataType": "string",
-            "sourceColumn": "secondary_driver_code",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "secondary_driver_code",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "created_date",
             "dataType": "dateTime",
             "sourceColumn": "created_date",
@@ -40656,52 +40628,6 @@
             "sourceColumn": "created_by_user_code",
             "sourceProviderType": "varchar",
             "sourceLineageTag": "created_by_user_code",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "house_late_flag",
-            "dataType": "double",
-            "sourceColumn": "house_late_flag",
-            "sourceProviderType": "decimal",
-            "sourceLineageTag": "house_late_flag",
-            "summarizeBy": "sum",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              },
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ]
-          },
-          {
-            "name": "late_fee_reason",
-            "dataType": "string",
-            "sourceColumn": "late_fee_reason",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "late_fee_reason",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "late_fee_description",
-            "dataType": "string",
-            "sourceColumn": "late_fee_description",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "late_fee_description",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -40814,6 +40740,80 @@
               {
                 "name": "PBI_FormatHint",
                 "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "first_seat_driver_code",
+            "dataType": "string",
+            "sourceColumn": "first_seat_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "first_seat_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "second_seat_driver_code",
+            "dataType": "string",
+            "sourceColumn": "second_seat_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "second_seat_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "hours_late",
+            "dataType": "double",
+            "sourceColumn": "hours_late",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "hours_late",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "late_reason",
+            "dataType": "string",
+            "sourceColumn": "late_reason",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_reason",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "late_rules",
+            "dataType": "string",
+            "sourceColumn": "late_rules",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "late_rules",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
               }
             ]
           }
@@ -43269,20 +43269,6 @@
             ]
           },
           {
-            "name": "driver_manager_of_logistics_code",
-            "dataType": "string",
-            "sourceColumn": "driver_manager_of_logistics_code",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "driver_manager_of_logistics_code",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "preplan_sent_date",
             "dataType": "dateTime",
             "sourceColumn": "preplan_sent_date",
@@ -43450,6 +43436,20 @@
             "formatString": "General Date",
             "sourceProviderType": "time",
             "sourceLineageTag": "created_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "driver_manager_operations_lead_code",
+            "dataType": "string",
+            "sourceColumn": "driver_manager_operations_lead_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "driver_manager_operations_lead_code",
             "summarizeBy": "none",
             "annotations": [
               {

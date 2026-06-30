@@ -1,5 +1,5 @@
--- Auto Generated (Do not modify) FEECAB15F6E134CA0FF7EB94301A215C92C13E05BBA6294BF932A7692B2E0EB5
-CREATE   VIEW [gold].[vw_preplan_tracking]
+-- Auto Generated (Do not modify) 2284B7DD3D8AF4D60AB1418E30C69E71293435E00B505F06118570931728CB5C
+CREATE       VIEW [gold].[vw_preplan_tracking]
 AS
 
 SELECT
@@ -11,7 +11,7 @@ SELECT
     , [preplan_tracking_team_status_code]   AS [team_status_code]
 
     , [preplan_tracking_dm]                 AS [driver_manager_code]
-    , [preplan_tracking_dmol]               AS [driver_manager_of_logistics_code]
+    , [preplan_tracking_dmol]               AS [driver_manager_operations_lead_code]
 
     , [preplan_tracking_sent_date]          AS [preplan_sent_date]
     , [preplan_tracking_sent_time]          AS [preplan_sent_time]
