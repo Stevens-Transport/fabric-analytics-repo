@@ -48157,6 +48157,132 @@
         ]
       },
       {
+        "name": "ibmi_appointment_changes",
+        "sourceLineageTag": "[silver].[ibmi_appointment_changes]",
+        "columns": [
+          {
+            "name": "appt_chgs_load_number",
+            "dataType": "string",
+            "sourceColumn": "appt_chgs_load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "appt_chgs_load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "appt_chgs_stop_number",
+            "dataType": "int64",
+            "sourceColumn": "appt_chgs_stop_number",
+            "formatString": "0",
+            "sourceProviderType": "smallint",
+            "sourceLineageTag": "appt_chgs_stop_number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "appt_chgs_type",
+            "dataType": "string",
+            "sourceColumn": "appt_chgs_type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "appt_chgs_type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "appt_chgs_original_appointment_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "appt_chgs_original_appointment_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "appt_chgs_original_appointment_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "appt_chgs_changed_appointment_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "appt_chgs_changed_appointment_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "appt_chgs_changed_appointment_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "appt_chgs_appointment_change_user_code",
+            "dataType": "string",
+            "sourceColumn": "appt_chgs_appointment_change_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "appt_chgs_appointment_change_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "appt_chgs_change_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "appt_chgs_change_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "appt_chgs_change_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "ibmi_appointment_changes",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "ibmi_ar_extension",
         "sourceLineageTag": "[silver].[ibmi_ar_extension]",
         "columns": [
@@ -100857,6 +100983,189 @@
         ]
       },
       {
+        "name": "risk_claim_comments",
+        "sourceLineageTag": "[silver].[risk_claim_comments]",
+        "columns": [
+          {
+            "name": "claim_comments_record_code",
+            "dataType": "double",
+            "sourceColumn": "claim_comments_record_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "claim_comments_record_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_involved_party_code",
+            "dataType": "double",
+            "sourceColumn": "claim_comments_involved_party_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "claim_comments_involved_party_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_comment_code",
+            "dataType": "double",
+            "sourceColumn": "claim_comments_comment_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "claim_comments_comment_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_comment",
+            "dataType": "string",
+            "sourceColumn": "claim_comments_comment",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_comments_comment",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_comment_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "claim_comments_comment_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "claim_comments_comment_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_create_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "claim_comments_create_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "claim_comments_create_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_create_user_code",
+            "dataType": "string",
+            "sourceColumn": "claim_comments_create_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_comments_create_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_last_updat_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "claim_comments_last_updat_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "claim_comments_last_updat_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_last_update_user",
+            "dataType": "string",
+            "sourceColumn": "claim_comments_last_update_user",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_comments_last_update_user",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_comments_comment_type_code",
+            "dataType": "double",
+            "sourceColumn": "claim_comments_comment_type_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "claim_comments_comment_type_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "risk_claim_comments",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "risk_claim_master",
         "sourceLineageTag": "[silver].[risk_claim_master]",
         "columns": [
@@ -101563,6 +101872,134 @@
           {
             "name": "IsTableInBiModel",
             "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "risk_claim_type",
+        "sourceLineageTag": "[silver].[risk_claim_type]",
+        "columns": [
+          {
+            "name": "claim_type_code",
+            "dataType": "double",
+            "sourceColumn": "claim_type_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "claim_type_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "claim_type_description",
+            "dataType": "string",
+            "sourceColumn": "claim_type_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_type_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_type_create_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "claim_type_create_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "claim_type_create_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_type_create_user_code",
+            "dataType": "string",
+            "sourceColumn": "claim_type_create_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_type_create_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_type_last_updated_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "claim_type_last_updated_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "claim_type_last_updated_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_type_last_updated_user_code",
+            "dataType": "string",
+            "sourceColumn": "claim_type_last_updated_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_type_last_updated_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_active",
+            "dataType": "string",
+            "sourceColumn": "is_active",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "is_active",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "risk_claim_type",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
           }
         ]
       },
