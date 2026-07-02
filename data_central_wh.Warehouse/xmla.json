@@ -24962,6 +24962,177 @@
         ]
       },
       {
+        "name": "vw_fact_cargo_claim_details",
+        "sourceLineageTag": "[gold].[vw_fact_cargo_claim_details]",
+        "columns": [
+          {
+            "name": "claim_mast_record_code",
+            "dataType": "double",
+            "sourceColumn": "claim_mast_record_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "claim_mast_record_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "claim_mast_claim_number",
+            "dataType": "string",
+            "sourceColumn": "claim_mast_claim_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_mast_claim_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_mast_occurance_date",
+            "dataType": "dateTime",
+            "sourceColumn": "claim_mast_occurance_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "claim_mast_occurance_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_mast_occurance_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "claim_mast_occurance_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "claim_mast_occurance_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "claim_mast_truck_number",
+            "dataType": "string",
+            "sourceColumn": "claim_mast_truck_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "claim_mast_truck_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "involved_drv_driver_code",
+            "dataType": "string",
+            "sourceColumn": "involved_drv_driver_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "involved_drv_driver_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "involved_drv_dm_code",
+            "dataType": "string",
+            "sourceColumn": "involved_drv_dm_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "involved_drv_dm_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_policy_load_number",
+            "dataType": "string",
+            "sourceColumn": "order_policy_load_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "order_policy_load_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_policy_dispatch",
+            "dataType": "int64",
+            "sourceColumn": "order_policy_dispatch",
+            "formatString": "0",
+            "sourceProviderType": "smallint",
+            "sourceLineageTag": "order_policy_dispatch",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "comments",
+            "dataType": "string",
+            "sourceColumn": "comments",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "comments",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_fact_cargo_claim_details",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "vw_fact_incr_billing_all",
         "sourceLineageTag": "[gold].[vw_fact_incr_billing_all]",
         "columns": [
@@ -103524,6 +103695,456 @@
           {
             "name": "IsTableInBiModel",
             "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "risk_osd_item",
+        "sourceLineageTag": "[silver].[risk_osd_item]",
+        "columns": [
+          {
+            "name": "osd_item_attached_record_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_attached_record_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_attached_record_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_item_record_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_item_record_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_item_record_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_discrepancy_type_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_discrepancy_type_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_discrepancy_type_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_damage_type_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_damage_type_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_damage_type_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_disposition_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_disposition_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_disposition_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_damage_cause_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_damage_cause_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_damage_cause_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_quantity",
+            "dataType": "int64",
+            "sourceColumn": "osd_item_quantity",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "osd_item_quantity",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_unit_of_measure_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_unit_of_measure_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_unit_of_measure_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_product_code",
+            "dataType": "string",
+            "sourceColumn": "osd_item_product_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_product_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_product_description",
+            "dataType": "string",
+            "sourceColumn": "osd_item_product_description",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_product_description",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_commodity_code",
+            "dataType": "string",
+            "sourceColumn": "osd_item_commodity_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_commodity_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_stopoff",
+            "dataType": "string",
+            "sourceColumn": "osd_item_stopoff",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_stopoff",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_return_fee_amount",
+            "dataType": "double",
+            "sourceColumn": "osd_item_return_fee_amount",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_return_fee_amount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_expected_weight",
+            "dataType": "string",
+            "sourceColumn": "osd_item_expected_weight",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_expected_weight",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_delivered_weight",
+            "dataType": "string",
+            "sourceColumn": "osd_item_delivered_weight",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_delivered_weight",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_expected_condition_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_expected_condition_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_expected_condition_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_delivered_condition_code",
+            "dataType": "double",
+            "sourceColumn": "osd_item_delivered_condition_code",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "osd_item_delivered_condition_code",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_comments",
+            "dataType": "string",
+            "sourceColumn": "osd_item_comments",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_comments",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_created_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "osd_item_created_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "osd_item_created_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_created_by_user_code",
+            "dataType": "string",
+            "sourceColumn": "osd_item_created_by_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_created_by_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_last_updated_datetime",
+            "dataType": "dateTime",
+            "sourceColumn": "osd_item_last_updated_datetime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "osd_item_last_updated_datetime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_last_updated_by_user_code",
+            "dataType": "string",
+            "sourceColumn": "osd_item_last_updated_by_user_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "osd_item_last_updated_by_user_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_quantity_refused",
+            "dataType": "int64",
+            "sourceColumn": "osd_item_quantity_refused",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "osd_item_quantity_refused",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_quantity_damaged",
+            "dataType": "int64",
+            "sourceColumn": "osd_item_quantity_damaged",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "osd_item_quantity_damaged",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_quantity_over",
+            "dataType": "int64",
+            "sourceColumn": "osd_item_quantity_over",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "osd_item_quantity_over",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_quantity_short",
+            "dataType": "int64",
+            "sourceColumn": "osd_item_quantity_short",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "osd_item_quantity_short",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "osd_item_quantity_kept",
+            "dataType": "int64",
+            "sourceColumn": "osd_item_quantity_kept",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "osd_item_quantity_kept",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "risk_osd_item",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
           }
         ]
       },
