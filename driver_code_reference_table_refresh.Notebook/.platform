@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "driver_code_reference_table_refresh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4e9f28a6-ab69-8695-4063-7749b15f3134"
+  }
+}

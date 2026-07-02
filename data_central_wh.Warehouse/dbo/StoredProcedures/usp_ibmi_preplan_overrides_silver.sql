@@ -1,12 +1,12 @@
 /***************************************************************************************************
-Procedure:          dbo.usp_ibmi_preplan_overrides_silver
-Create Date:        2026-06-19
-Author:             Jeremy Shahan
-Description:        Truncate and load of Preplan Overrides to Silver
+Procedure:          dbo.usp_ibmi_preplan_tracking_silver
+Create Date:        2026-06-25
+Author:             Kacey Zhu
+Description:        Truncate and load of Preplan tracking to Silver
 Called by:          Fabric
-					Pipeline: ibmi_preplan_overrides
-Affected table(s):  silver.ibmi_preplan_overrides
-Usage:              EXEC dbo.usp_ibmi_preplan_overrides_silver
+					Pipeline: ibmi_preplan_tracking
+Affected table(s):  silver.ibmi_preplan_tracking
+Usage:              EXEC dbo.usp_ibmi_preplan_tracking_silver
 
 ****************************************************************************************************
 SUMMARY OF CHANGES
@@ -15,32 +15,44 @@ SUMMARY OF CHANGES
 1            
 ***************************************************************************************************/
 
-CREATE         PROCEDURE [dbo].[usp_ibmi_preplan_overrides_silver]
+CREATE           PROCEDURE [dbo].[usp_ibmi_preplan_overrides_silver]
 AS
 
 SET NOCOUNT ON
 
-DELETE FROM silver.ibmi_preplan_overrides
+DELETE FROM silver.ibmi_preplan_tracking
 
-INSERT INTO silver.ibmi_preplan_overrides
+INSERT INTO silver.ibmi_preplan_tracking
 SELECT
 
-        TRIM(a.PVORD#)                                                                                AS preplan_overrides_load_number
-      , TRIM(a.PVSEG)                                                                                 AS preplan_overrides_dispatch
-      , TRIM(a.PVUNIT)                                                                                AS preplan_overrides_planned_truck_number
-      , TRIM(a.PVMODL)                                                                                AS preplan_overrides_model_recommended_truck_number
-      , CASE
-            WHEN TRIM(a.PVUNPL) = 'Y' 
-                THEN 'TRUE'
-            ELSE 'FALSE' END                                                                          AS is_unplanned
-      , TRIM(a.PVMDPL)                                                                                AS preplan_overrides_model_plan_code
-      , TRIM(a.PVOVCD)                                                                                AS preplan_overrides_override_code
-      , TRIM(a.PVDESC)                                                                                AS preplan_overrides_override_description
-      , a.DISPATCH_DATETIME                                                                           AS preplan_overrides_dispatch_datetime
-      , a.CREATE_DATETIME                                                                             AS preplan_overrides_create_datetime
-      , TRIM(a.PVDMOD)                                                                                AS preplan_overrides_model_recommended_at_dispatch
-      , TRIM(a.PVDMDP)                                                                                AS preplan_overrides_model_plan_at_dispatch
-      , TRIM(a.PVUSER)                                                                                AS preplan_overrides_user_code
-      , TRIM(a.PVAREA)                                                                                AS preplan_overrides_area_code
---INTO data_central_wh.silver.ibmi_preplan_overrides
-FROM data_central_lh.dbo.ibmi_preplan_overrides_bronze a
+      TRIM([OPODR])                  AS preplan_tracking_load_number,
+      TRIM([OPUNIT])                 AS preplan_tracking_truck_number,
+      TRIM([OPDR1])                  AS preplan_tracking_driver_seat_1,
+      TRIM([OPDR2])                  AS preplan_tracking_driver_seat_2,
+      TRIM([OPTEAM])                 AS preplan_tracking_team_status_code,
+      TRIM([OPSUPR])                 AS preplan_tracking_dm,
+      TRIM([OPFMGR])                 AS preplan_tracking_dmol,
+      [OPDSNT]                       AS preplan_tracking_sent_date,
+      [OPTSNT]                       AS preplan_tracking_sent_time,
+      TRIM([OPSUSR])                 AS preplan_tracking_sent_user_code,
+      [OPDRSP]                       AS preplan_tracking_responded_date,
+      [OPTRSP]                       AS preplan_tracking_responded_time,
+      CASE 
+            TRIM(OPACPT) 
+            WHEN 'Y' then 'TRUE'
+            WHEN 'N' then 'FALSE' 
+            ELSE 'unknown'
+            END                     AS is_accepted,
+      [OPDCNL]                      AS preplan_tracking_cancel_date,
+      [OPTCNL]                      AS preplan_tracking_cancel_time,
+      TRIM([OPCUSR])                AS preplan_tracking_cancel_user_code,
+      CASE 
+            TRIM(OPCNCL)
+            WHEN 'Y' then 'TRUE' 
+            ELSE 'FALSE' 
+            END                     AS is_canceled,
+      [OPCRTD]                      AS preplan_tracking_data_created,
+      [OPCRTT]                      AS preplan_tracking_time_created
+
+--INTO data_central_wh.silver.ibmi_preplan_tracking
+FROM data_central_lh.dbo.ibmi_preplan_tracking_bronze
