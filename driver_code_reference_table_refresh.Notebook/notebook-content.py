@@ -54,7 +54,7 @@ from datetime import datetime
 SERVER   = "lofzv5bdxbxepf3ufbs6kug4du-p5wmllx2r55e7m7glgprufxpe4.datawarehouse.fabric.microsoft.com"
 DATABASE = "data_central_wh"
 SOURCE_VIEW      = "gold.vw_ibmi_driver"
-REFERENCE_TABLE  = "driver_code_reference_table"   # main output (default lakehouse)
+REFERENCE_TABLE  = "stg_driver_code_reference_table"   # main output (default lakehouse)
 REVIEW_TABLE     = "driver_code_review"            # manual-review output
 # ------------------------------------------------------------
 
