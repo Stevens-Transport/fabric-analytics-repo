@@ -74,6 +74,10 @@ df = pd.read_sql("""
 print(df.shape)
 print(df.head())
 
+# Full-detail copy for review tables (keep the main df lean).
+df_full = pd.read_sql("SELECT * FROM gold.vw_ibmi_driver", conn)
+df_full['drv_code'] = df_full['drv_code'].astype(str).str.strip().str.upper()
+
 # METADATA ********************
 
 # META {
@@ -169,21 +173,34 @@ print(df[df['drv_code'].isin(all_dup)]
 # ============================================================
 import re
 
+# Connector / error words that follow 'CODE' but are not real codes
+# (e.g. "THIS CODE IN ERROR" -> IN, "SEE TUDA NEW CODE BY ERRO" -> BY).
+STOP_WORDS = {'IN', 'BY', 'ERROR', 'ERRO', 'ERR', 'TO', 'THE',
+              'A', 'AN', 'IS', 'NO', 'NOT'}
+
+
 def extract_code_from_address(address):
     if pd.isna(address):
         return None
- 
+
     address = str(address).strip()
- 
+
+    # Strip quotes only, so CODE "POWRO" -> CODE POWRO. Asterisks and other symbols
+    # are left alone; the [A-Z0-9]+ pattern already stops at them, so starred rows
+    # (e.g. "**SEE NEW CODE GATAN1", "**CORRECT CODE MCANM**") are unaffected.
+    address = address.replace('"', '').replace("'", '')
+
     # If the address line doesn't contain 'CODE', it's a normal address.
     if 'CODE' not in address.upper():
         return None
- 
+
     # 'CHANGED TO xxx' pattern -> take the code after 'TO'.
     changed_match = re.search(r'CHANGED\s+TO\s+([A-Z0-9]+)', address)
     if changed_match:
-        return changed_match.group(1)
- 
+        candidate = changed_match.group(1)
+        if candidate.upper() not in STOP_WORDS:
+            return candidate
+
     # Otherwise take the code after the last occurrence of 'CODE'.
     all_matches = re.findall(r'CODE\s+([A-Z0-9]+)', address)
     if all_matches:
@@ -191,20 +208,27 @@ def extract_code_from_address(address):
         # Contains a space or is empty -> noise, not a valid code.
         if ' ' in candidate or candidate == '':
             return None
+        # Reject connector/error words that are not real codes.
+        if candidate.upper() in STOP_WORDS:
+            return None
         return candidate
- 
+
     return None
- 
- 
+
+
 df['extracted_code'] = df['drv_address_line_1'].apply(extract_code_from_address)
- 
+
 # History codes: address line points to another code.
 history_codes = df[df['extracted_code'].notna()][['drv_code', 'extracted_code']].copy()
 history_codes.columns = ['history_code', 'current_code']
- 
+
 # Remove duplicate edges (a code duplicated in gold must not yield identical edges twice).
 history_codes = history_codes.drop_duplicates(subset=['history_code'], keep='first')
- 
+
+# Drop self-pointing edges (e.g. MIDOU's "SEE CORRECT CODE MIDOU") - meaningless,
+# and they would otherwise loop through the Step 3 guard back to a self-mapping.
+history_codes = history_codes[history_codes['history_code'] != history_codes['current_code']]
+
 print(f"History codes (raw edges): {len(history_codes)}")
 print(history_codes.head(10))
 
@@ -285,6 +309,10 @@ df_ssn_conflict_review = (
                      '_curr_ssn': 'current_ssn'})
     .copy()
 )
+
+# add the driver name for the broken code
+name_lookup = df_attr.set_index('drv_code')['drv_full_name'].to_dict()
+df_ssn_conflict_review['history_full_name'] = df_ssn_conflict_review['history_code'].map(name_lookup)
  
 # Break the suspicious links: point the code back to itself.
 hc.loc[suspect, 'current_code'] = hc.loc[suspect, 'history_code']
@@ -504,96 +532,58 @@ spark.sql("SELECT * FROM tmp_driver_code_reference_table LIMIT 10").show()
 # META   "language_group": "synapse_pyspark"
 # META }
 
+# CELL ********************
+
+# ============================================================
+# Step 5b: Build the review table with FULL gold detail (in memory, no write yet)
+# (all original gold columns for every flagged code; tagged by conflict_type)
+# ============================================================
+
+# All codes that need manual review: shared-code conflicts + SSN-mismatch breaks
+shared_code_set = set(df_conflicts['drv_code'])
+ssn_break_set   = set(df_ssn_conflict_review['history_code'])
+review_codes    = shared_code_set | ssn_break_set
+
+# Pull every original gold row (all columns) for those codes
+df_review = df_full[df_full['drv_code'].isin(review_codes)].copy()
+
+# Tag each row with why it's flagged (a code could in theory hit both types)
+def classify(code):
+    tags = []
+    if code in shared_code_set:
+        tags.append('shared_code')
+    if code in ssn_break_set:
+        tags.append('ssn_mismatch')
+    return '+'.join(tags)
+
+df_review.insert(0, 'conflict_type', df_review['drv_code'].apply(classify))
+df_review = df_review.sort_values(['conflict_type', 'drv_code']).reset_index(drop=True)
+
+# Summary
+print(f"Review rows (full gold detail): {len(df_review)}")
+print(f"  shared_code : {(df_review['conflict_type'] == 'shared_code').sum()}")
+print(f"  ssn_mismatch: {(df_review['conflict_type'] == 'ssn_mismatch').sum()}")
+print(f"  codes flagged: {sorted(review_codes)}")
+
+# Key columns first (fits on screen for a quick scan)
+key_cols = ['conflict_type', 'drv_code', 'drv_full_name', 'drv_social_security',
+            'drv_address_line_1', 'drv_address_city', 'drv_address_state', 'drv_create_date']
+print("\n--- key columns ---")
+display(df_review[key_cols])
+
+# Full gold detail (all columns, horizontally scrollable)
+print("\n--- full gold detail ---")
+display(df_review)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # MARKDOWN ********************
 
 # ———————————下面是分割线———————————— 
 # 
 # 核验tmp成表数量数量
-
-# CELL ********************
-
-# Step 3 里所有 history != current 的边
-step3_real = set(history_codes[history_codes['history_code'] != history_codes['current_code']]['history_code'])
-
-# 最终表里 history != current 的 history_code
-final_real = set(reference_table[reference_table['history_code'] != reference_table['current_code']]['history_code'])
-
-# 在 Step 3 有、但最终表里没了的(被断开或被过滤的)
-dropped = step3_real - final_real
-print(f"从 {len(step3_real)} 减到 {len(final_real)}，消失的 history_code：{sorted(dropped)}")
-
-# 看这些 code 在最终表里现在长什么样(应该变成了自映射或被归到冲突)
-print(reference_table[reference_table['history_code'].isin(dropped)].to_string(index=False))
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-# Step 3b 到底断了几条
-print("Step 3b broke:", int(suspect.sum()))
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-# 当前 history_codes 状态下的对账
-total = len(history_codes)
-eq = (history_codes['history_code'] == history_codes['current_code']).sum()
-neq = (history_codes['history_code'] != history_codes['current_code']).sum()
-print(f"history_codes 总行数: {total}")
-print(f"  history == current : {eq}")
-print(f"  history != current : {neq}")
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-print(history_codes[history_codes['history_code'] == history_codes['current_code']].to_string(index=False))
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-# df_attr 是每个 code 塌缩后保留的那一条(权威行)
-# 找出 df 里"有指针、但不是 df_attr 保留的那条"的脏行指针
-df_with_ptr = df[df['extracted_code'].notna()].copy()
-
-# df_attr 保留行的 (drv_code, address) 组合
-kept = set(zip(df_attr['drv_code'], df_attr['drv_address_line_1'].astype(str)))
-df_with_ptr['is_kept_row'] = df_with_ptr.apply(
-    lambda r: (r['drv_code'], str(r['drv_address_line_1'])) in kept, axis=1)
-
-# 来自非保留(脏)行的指针
-dirty_ptr = df_with_ptr[~df_with_ptr['is_kept_row']]
-print(f"来自脏行的指针数: {len(dirty_ptr)}")
-# 其中指向的不是自己的(才是真正有风险的)
-risky = dirty_ptr[dirty_ptr['drv_code'] != dirty_ptr['extracted_code']]
-print(f"其中指向别的 code(有风险): {len(risky)}")
-print(risky[['drv_code', 'extracted_code', 'drv_address_line_1', 'drv_social_security']].to_string(index=False))
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
