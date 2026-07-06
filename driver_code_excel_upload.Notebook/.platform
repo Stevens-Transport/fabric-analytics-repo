@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "driver_code_excel_upload"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d7c51ac4-0ecf-96e4-409d-ec862af145b0"
+  }
+}
