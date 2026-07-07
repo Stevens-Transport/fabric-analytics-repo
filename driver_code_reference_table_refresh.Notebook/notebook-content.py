@@ -34,6 +34,24 @@
 
 # CELL ********************
 
+# MAGIC %%configure
+# MAGIC {
+# MAGIC     "defaultLakehouse": {
+# MAGIC         "name": { "variableName": "$(/**/vl_fabricConfig/defaultLakehouseName)" },
+# MAGIC         "id": { "variableName": "$(/**/vl_fabricConfig/defaultLakehouseGuid)" },
+# MAGIC         "workspaceId": { "variableName": "$(/**/vl_fabricConfig/defaultWorkspaceGuid)" }
+# MAGIC     }
+# MAGIC }
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 import pandas as pd
 import pyodbc
 import struct
@@ -51,18 +69,14 @@ from datetime import datetime
 # CELL ********************
 
 # ---------------------- CONFIG ------------------------------
-SERVER   = "lofzv5bdxbxepf3ufbs6kug4du-p5wmllx2r55e7m7glgprufxpe4.datawarehouse.fabric.microsoft.com"
-DATABASE = "data_central_wh"
+vl = notebookutils.variableLibrary.getLibrary("vl_fabricConfig")
+
+SERVER   = "lofzv5bdxbxepf3ufbs6kug4du-p5wmllx2r55e7m7glgprufxpe4.datawarehouse.fabric.microsoft.com"  
+DATABASE = vl.warehouseName
 SOURCE_VIEW      = "gold.vw_ibmi_driver"
 REFERENCE_TABLE  = "stg_driver_code_reference_table"   # main output (default lakehouse)
 REVIEW_TABLE     = "driver_code_review"            # manual-review output
 # ------------------------------------------------------------
-
-def log(msg):
-    print(f"[{datetime.now():%Y-%m-%d %H:%M:%S}] {msg}")
- 
- 
-log("=== Driver code reference table refresh START ===")
 
 # METADATA ********************
 
