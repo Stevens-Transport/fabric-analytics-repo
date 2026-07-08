@@ -8,33 +8,19 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "6347e061-2f76-4e4a-93c6-8834bf7afa76",
-# META       "default_lakehouse_name": "data_central_lh",
-# META       "default_lakehouse_workspace_id": "aec56c7f-8ffa-4f7a-b3e6-599f1a16ef27",
-# META       "known_lakehouses": [
-# META         {
-# META           "id": "6347e061-2f76-4e4a-93c6-8834bf7afa76"
-# META         }
-# META       ]
+# META       "default_lakehouse_name": "",
+# META       "default_lakehouse_workspace_id": "",
+# META       "known_lakehouses": []
 # META     },
 # META     "warehouse": {
-# META       "known_warehouses": [
-# META         {
-# META           "id": "6d0007d9-0647-4acb-9add-13d26a7f0b54",
-# META           "type": "Lakewarehouse"
-# META         },
-# META         {
-# META           "id": "f8578495-391e-4e7e-b791-4949397ba86f",
-# META           "type": "Datawarehouse"
-# META         }
-# META       ]
+# META       "known_warehouses": []
 # META     }
 # META   }
 # META }
 
 # CELL ********************
 
-# MAGIC %%configure
+# MAGIC %%configure -f
 # MAGIC {
 # MAGIC     "defaultLakehouse": {
 # MAGIC         "name": { "variableName": "$(/**/vl_fabricConfig/defaultLakehouseName)" },
@@ -58,6 +44,7 @@ import struct
 import re
 import notebookutils
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # METADATA ********************
 
@@ -71,12 +58,19 @@ from datetime import datetime
 # ---------------------- CONFIG ------------------------------
 vl = notebookutils.variableLibrary.getLibrary("vl_fabricConfig")
 
-SERVER   = "lofzv5bdxbxepf3ufbs6kug4du-p5wmllx2r55e7m7glgprufxpe4.datawarehouse.fabric.microsoft.com"  
+SERVER   = "lofzv5bdxbxepf3ufbs6kug4du-p5wmllx2r55e7m7glgprufxpe4.datawarehouse.fabric.microsoft.com"
 DATABASE = vl.warehouseName
 SOURCE_VIEW      = "gold.vw_ibmi_driver"
 REFERENCE_TABLE  = "stg_driver_code_reference_table"   # main output (default lakehouse)
 REVIEW_TABLE     = "driver_code_review"            # manual-review output
 # ------------------------------------------------------------
+
+def log(msg):
+    now = datetime.now(ZoneInfo("America/Chicago"))
+    print(f"[{now:%Y-%m-%d %H:%M:%S %Z}] {msg}")
+
+
+log("=== Driver code reference table refresh START ===")
 
 # METADATA ********************
 
