@@ -28,28 +28,43 @@ SELECT
 	, TRIM(a.ORODR)																	AS order_load_number
 	, TRIM(a.ORSTAT)																AS order_status_code
 	, ORDATE.date_key_pk															AS order_date
-	--, CASE WHEN CONVERT(INT, a.ORTIME) < 2400 AND LEN(TRIM(a.ORTIME)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORTIME,2),':',RIGHT(a.ORTIME,2)))
-	--	ELSE NULL END																AS order_time
-	, TRIM(a.ORTIME)																AS order_time
+	, CASE 
+        WHEN a.ORTIME LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORTIME) <= 2359 
+		    AND LEN(TRIM(a.ORTIME)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORTIME),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORTIME,2),':',RIGHT(a.ORTIME,2)))
+		ELSE NULL 
+        END																            AS order_time
+	--, TRIM(a.ORTIME)																AS order_time
 	, TRIM(a.ORCUST)																AS order_customer_code
 	, TRIM(a.ORCONS)																AS order_consignee_code
 	, TRIM(a.ORBILL)																AS order_billto_code
 	, TRIM(a.ORLDAT)																AS order_loadat_code
 	, ORPDAT.date_key_pk															AS order_early_pickup_date
-	--, CASE WHEN CONVERT(INT, a.ORPTIM) < 2400 AND LEN(TRIM(a.ORPTIM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORPTIM,2),':',RIGHT(a.ORPTIM,2)))
-	--	ELSE NULL END																AS order_early_pickup_time
-	, TRIM(a.ORPTIM)																AS order_early_pickup_time
+	, CASE 
+        WHEN a.ORPTIM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORPTIM) <= 2359 
+		    AND LEN(TRIM(a.ORPTIM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORPTIM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORPTIM,2),':',RIGHT(a.ORPTIM,2)))
+		ELSE NULL 
+        END																            AS order_early_pickup_time
+	--, TRIM(a.ORPTIM)																AS order_early_pickup_time
 	, CASE TRIM(a.ORRPIK)
 		WHEN 'Y' THEN 'TRUE'
 		WHEN 'N' THEN 'FALSE'
 		ELSE 'unknown'	END															AS is_pickup_required
 	, ORDDAT.date_key_pk															AS order_early_delivery_date
-	--, CASE WHEN CONVERT(INT, a.ORDTIM) < 2400 AND LEN(TRIM(a.ORDTIM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORDTIM,2),':',RIGHT(a.ORDTIM,2)))
-	--	ELSE NULL END																AS order_early_delivery_time
-	, TRIM(a.ORDTIM)																AS order_early_delivery_time
+	, CASE 
+        WHEN a.ORDTIM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORDTIM) <= 2359 
+		    AND LEN(TRIM(a.ORDTIM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORDTIM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORDTIM,2),':',RIGHT(a.ORDTIM,2)))
+		ELSE NULL 
+        END																            AS order_early_delivery_time
+	--, TRIM(a.ORDTIM)																AS order_early_delivery_time
     , CASE TRIM(a.ORRDEL)
 		WHEN 'Y' THEN 'TRUE'
 		WHEN 'N' THEN 'FALSE'
@@ -100,17 +115,27 @@ SELECT
     , TRIM(a.ORCUBE)																AS order_load_volume --In cubic feet
     , TRIM(a.ORSPEC)																AS order_message --Need clarification from Ops
     , ORAPDT.date_key_pk															AS order_late_pickup_date
-	--, CASE WHEN CONVERT(INT, a.ORAPTM) < 2400 AND LEN(TRIM(a.ORAPTM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORAPTM,2),':',RIGHT(a.ORAPTM,2)))
-	--	ELSE NULL END																AS order_late_pickup_time
-	, TRIM(a.ORAPTM)																AS order_late_pickup_time
+	, CASE 
+        WHEN a.ORAPTM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORAPTM) <= 2359 
+		    AND LEN(TRIM(a.ORAPTM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORAPTM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORAPTM,2),':',RIGHT(a.ORAPTM,2)))
+		ELSE NULL 
+        END																            AS order_late_pickup_time
+	--, TRIM(a.ORAPTM)																AS order_late_pickup_time
     --, TRIM(a.ORAPNM)																Unused
     --, TRIM(a.ORAPIN)																Unused over the last few decades
     , ORADDT.date_key_pk															AS order_late_delivery_date
-	--, CASE WHEN CONVERT(INT, a.ORADTM) < 2400 AND LEN(TRIM(a.ORADTM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORADTM,2),':',RIGHT(a.ORADTM,2)))
-	--	ELSE NULL END																AS order_late_delivery_time
-	, TRIM(a.ORADTM)																AS order_late_delivery_time
+	, CASE 
+        WHEN a.ORADTM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORADTM) <= 2359 
+		    AND LEN(TRIM(a.ORADTM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORADTM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORADTM,2),':',RIGHT(a.ORADTM,2)))
+		ELSE NULL 
+        END																            AS order_late_delivery_time
+	--, TRIM(a.ORADTM)																AS order_late_delivery_time
     --, TRIM(a.ORADNM)																Unused
     --, TRIM(a.ORADIN)																Unused over the last few decades
     , a.ORPREQ																		AS order_required_pallet_count
@@ -118,19 +143,28 @@ SELECT
     --, a.ORCPIC																	Unused
     --, a.ORCWGT																	Unused
     , ORSHDT.date_key_pk															AS order_ship_date
-	--, CASE WHEN CONVERT(INT, TRIM(a.ORSHTM)) < 2400 AND LEN(TRIM(a.ORSHTM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(TRIM(a.ORSHTM),2),':',RIGHT(TRIM(a.ORSHTM),2)))
-	--	ELSE NULL END																AS order_ship_time
-	, TRIM(a.ORSHTM)																		AS order_ship_time
+	, CASE 
+        WHEN a.ORSHTM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORSHTM) <= 2359 
+		    AND LEN(TRIM(a.ORSHTM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORSHTM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORSHTM,2),':',RIGHT(a.ORSHTM,2)))
+		ELSE NULL 
+        END																            AS order_ship_time
 	--, TRIM(a.ORSHTM)																AS order_ship_time
     , a.ORTMPH																		AS order_temp_high
     , a.ORTMPL																		AS order_temp_low
     --, TRIM(a.OREQTY)																Unused over the last few years
     , ORUPDD.date_key_pk															AS order_last_update_date
-	--, CASE WHEN CONVERT(INT, a.ORUPDT) < 2400 AND LEN(TRIM(a.ORUPDT)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORUPDT,2),':',RIGHT(a.ORUPDT,2)))
-	--	ELSE NULL END																AS order_last_update_time
-	, TRIM(a.ORUPDT)																AS order_last_update_time
+	, CASE 
+        WHEN a.ORUPDT LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORUPDT) <= 2359 
+		    AND LEN(TRIM(a.ORUPDT)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORUPDT),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORUPDT,2),':',RIGHT(a.ORUPDT,2)))
+		ELSE NULL 
+        END																            AS order_last_update_time
+	--, TRIM(a.ORUPDT)																AS order_last_update_time
     , TRIM(a.ORUPDI)																AS order_last_update_initials
     , TRIM(a.ORCO)																	AS order_company_code
     , TRIM(a.ORDV)																	AS order_division_code
