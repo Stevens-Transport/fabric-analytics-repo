@@ -28,28 +28,43 @@ SELECT
 	, TRIM(a.ORODR)																	AS cd_order_load_number
 	, TRIM(a.ORSTAT)																AS cd_order_status_code
 	, ORDATE.date_key_pk															AS cd_order_date
-	--, CASE WHEN CONVERT(INT, a.ORTIME) < 2400 AND LEN(TRIM(a.ORTIME)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORTIME,2),':',RIGHT(a.ORTIME,2)))
-	--	ELSE NULL END																AS order_time
-	, TRIM(a.ORTIME)																AS cd_order_time
+	, CASE 
+        WHEN a.ORTIME LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORTIME) <= 2359 
+		    AND LEN(TRIM(a.ORTIME)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORTIME),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORTIME,2),':',RIGHT(a.ORTIME,2)))
+		ELSE NULL 
+        END																            AS cd_order_time
+	--, TRIM(a.ORTIME)																AS cd_order_time
 	, TRIM(a.ORCUST)																AS cd_order_customer_code
 	, TRIM(a.ORCONS)																AS cd_order_consignee_code
 	, TRIM(a.ORBILL)																AS cd_order_billto_code
 	, TRIM(a.ORLDAT)																AS cd_order_loadat_code
 	, ORPDAT.date_key_pk															AS cd_order_early_pickup_date
-	--, CASE WHEN CONVERT(INT, a.ORPTIM) < 2400 AND LEN(TRIM(a.ORPTIM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORPTIM,2),':',RIGHT(a.ORPTIM,2)))
-	--	ELSE NULL END																AS order_early_pickup_time
-	, TRIM(a.ORPTIM)																AS cd_order_early_pickup_time
+	, CASE 
+        WHEN a.ORPTIM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORPTIM) <= 2359 
+		    AND LEN(TRIM(a.ORPTIM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORPTIM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORPTIM,2),':',RIGHT(a.ORPTIM,2)))
+		ELSE NULL 
+        END																            AS cd_order_early_pickup_time
+	--, TRIM(a.ORPTIM)																AS cd_order_early_pickup_time
 	, CASE TRIM(a.ORRPIK)
 		WHEN 'Y' THEN 'TRUE'
 		WHEN 'N' THEN 'FALSE'
 		ELSE 'unknown'	END															AS is_pickup_required
 	, ORDDAT.date_key_pk															AS cd_order_early_delivery_date
-	--, CASE WHEN CONVERT(INT, a.ORDTIM) < 2400 AND LEN(TRIM(a.ORDTIM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORDTIM,2),':',RIGHT(a.ORDTIM,2)))
-	--	ELSE NULL END																AS order_early_delivery_time
-	, TRIM(a.ORDTIM)																AS cd_order_early_delivery_time
+	, CASE 
+        WHEN a.ORDTIM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORDTIM) <= 2359 
+		    AND LEN(TRIM(a.ORDTIM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORDTIM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORDTIM,2),':',RIGHT(a.ORDTIM,2)))
+		ELSE NULL 
+        END																            AS cd_order_early_delivery_time
+	--, TRIM(a.ORDTIM)																AS cd_order_early_delivery_time
     , CASE TRIM(a.ORRDEL)
 		WHEN 'Y' THEN 'TRUE'
 		WHEN 'N' THEN 'FALSE'
@@ -57,10 +72,10 @@ SELECT
     , TRIM(a.ORCOMC)																AS cd_order_commodity_code
     , TRIM(a.ORCOMD)																AS cd_order_commodity_description
     , TRIM(a.ORINIT)																AS cd_order_creation_initials
-    , CONVERT(VARCHAR, a.ORCAC)													AS cd_order_customer_phone_area_code
-    , CONVERT(VARCHAR, a.ORCPHN)													AS cd_order_customer_phone_number
-    , CONVERT(VARCHAR, a.ORRAC)													AS cd_order_consignee_phone_area_code
-    , CONVERT(VARCHAR, a.ORRPHN)													AS cd_order_consignee_phone_number
+    , CONVERT(NVARCHAR, a.ORCAC)													AS cd_order_customer_phone_area_code
+    , CONVERT(NVARCHAR, a.ORCPHN)													AS cd_order_customer_phone_number
+    , CONVERT(NVARCHAR, a.ORRAC)													AS cd_order_consignee_phone_area_code
+    , CONVERT(NVARCHAR, a.ORRPHN)													AS cd_order_consignee_phone_number
     --, TRIM(a.ORCTIM)																Unused
     , a.ORWGT																		AS cd_order_load_weight
     --, a.ORTWGT																	Unused
@@ -82,7 +97,7 @@ SELECT
     --, a.OREMIL																	Unused over the last few decades
     , TRIM(a.ORRST)																	AS cd_order_load_type -- R = Reefer, D = Dry, I = Intermodal
     , TRIM(a.ORSTP)																	AS cd_order_stop_count --Need to convert to number
-    --, TRIM(a.ORLD)																AS order_load_count --Redundancy for the last several years. 
+    --, TRIM(a.ORLD)																AS cd_order_load_count --Redundancy for the last several years. 
     --, TRIM(a.ORPDRV)																Redundancy. Only used during proccessing to represent preplanned truck/T-Call location for swaps
     , TRIM(a.OR_DSP)																AS cd_order_dispatch_count
     --, TRIM(a.ORDSP)																Redundancy
@@ -100,17 +115,27 @@ SELECT
     , TRIM(a.ORCUBE)																AS cd_order_load_volume --In cubic feet
     , TRIM(a.ORSPEC)																AS cd_order_message --Need clarification from Ops
     , ORAPDT.date_key_pk															AS cd_order_late_pickup_date
-	--, CASE WHEN CONVERT(INT, a.ORAPTM) < 2400 AND LEN(TRIM(a.ORAPTM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORAPTM,2),':',RIGHT(a.ORAPTM,2)))
-	--	ELSE NULL END																AS order_late_pickup_time
-	, TRIM(a.ORAPTM)																AS cd_order_late_pickup_time
+	, CASE 
+        WHEN a.ORAPTM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORAPTM) <= 2359 
+		    AND LEN(TRIM(a.ORAPTM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORAPTM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORAPTM,2),':',RIGHT(a.ORAPTM,2)))
+		ELSE NULL 
+        END																            AS cd_order_late_pickup_time
+	--, TRIM(a.ORAPTM)																AS cd_order_late_pickup_time
     --, TRIM(a.ORAPNM)																Unused
     --, TRIM(a.ORAPIN)																Unused over the last few decades
     , ORADDT.date_key_pk															AS cd_order_late_delivery_date
-	--, CASE WHEN CONVERT(INT, a.ORADTM) < 2400 AND LEN(TRIM(a.ORADTM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORADTM,2),':',RIGHT(a.ORADTM,2)))
-	--	ELSE NULL END																AS order_late_delivery_time
-	, TRIM(a.ORADTM)																AS cd_order_late_delivery_time
+	, CASE 
+        WHEN a.ORADTM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORADTM) <= 2359 
+		    AND LEN(TRIM(a.ORADTM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORADTM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORADTM,2),':',RIGHT(a.ORADTM,2)))
+		ELSE NULL 
+        END																            AS cd_order_late_delivery_time
+	--, TRIM(a.ORADTM)																AS cd_order_late_delivery_time
     --, TRIM(a.ORADNM)																Unused
     --, TRIM(a.ORADIN)																Unused over the last few decades
     , a.ORPREQ																		AS cd_order_required_pallet_count
@@ -118,19 +143,28 @@ SELECT
     --, a.ORCPIC																	Unused
     --, a.ORCWGT																	Unused
     , ORSHDT.date_key_pk															AS cd_order_ship_date
-	--, CASE WHEN CONVERT(INT, TRIM(a.ORSHTM)) < 2400 AND LEN(TRIM(a.ORSHTM)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(TRIM(a.ORSHTM),2),':',RIGHT(TRIM(a.ORSHTM),2)))
-	--	ELSE NULL END																AS order_ship_time
-	, TRIM(a.ORSHTM)																		AS order_ship_time
-	--, TRIM(a.ORSHTM)																AS order_ship_time
+	, CASE 
+        WHEN a.ORSHTM LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORSHTM) <= 2359 
+		    AND LEN(TRIM(a.ORSHTM)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORSHTM),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORSHTM,2),':',RIGHT(a.ORSHTM,2)))
+		ELSE NULL 
+        END																            AS cd_order_ship_time
+	--, TRIM(a.ORSHTM)																AS cd_order_ship_time
     , a.ORTMPH																		AS cd_order_temp_high
     , a.ORTMPL																		AS cd_order_temp_low
     --, TRIM(a.OREQTY)																Unused over the last few years
     , ORUPDD.date_key_pk															AS cd_order_last_update_date
-	--, CASE WHEN CONVERT(INT, a.ORUPDT) < 2400 AND LEN(TRIM(a.ORUPDT)) = 4
-	--	THEN CONVERT(TIME,CONCAT(LEFT(a.ORUPDT,2),':',RIGHT(a.ORUPDT,2)))
-	--	ELSE NULL END																AS order_last_update_time
-	, TRIM(a.ORUPDT)																AS cd_order_last_update_time
+	, CASE 
+        WHEN a.ORUPDT LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.ORUPDT) <= 2359 
+		    AND LEN(TRIM(a.ORUPDT)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.ORUPDT),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.ORUPDT,2),':',RIGHT(a.ORUPDT,2)))
+		ELSE NULL 
+        END																            AS cd_order_last_update_time
+	--, TRIM(a.ORUPDT)																AS cd_order_last_update_time
     , TRIM(a.ORUPDI)																AS cd_order_last_update_initials
     , TRIM(a.ORCO)																	AS cd_order_company_code
     , TRIM(a.ORDV)																	AS cd_order_division_code
@@ -190,9 +224,8 @@ SELECT
     --, TRIM(a.ORTTYP)																Unused over the last few decades															
     --, TRIM(a.ORDTYP)																Unused
     --, TRIM(a.ORHAZC)																Unused
-    , TRIM(a.ORFIL)																	AS cd_order_delivery_code 
+    , TRIM(a.ORFIL)																	AS cd_order_delivery_code
     , CAST(0 AS bit) AS is_deleted
---INTO data_central_wh.silver.ibmi_cd_order
 FROM data_central_lh.dbo.ibmi_cd_order_bronze a
 LEFT JOIN gold.dim_date ORDATE ON a.ORDATE = ORDATE.date_ordinal
 LEFT JOIN gold.dim_date ORPDAT ON a.ORPDAT = ORPDAT.date_ordinal
