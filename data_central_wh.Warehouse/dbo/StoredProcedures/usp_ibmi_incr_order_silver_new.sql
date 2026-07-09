@@ -6,9 +6,6 @@ BEGIN
     BEGIN TRY
         BEGIN TRAN;
 
-        /*========================================================
-          Step 1: Prepare deduplicated source data (latest per ORODR)
-        ========================================================*/
         IF OBJECT_ID('tempdb..#DedupedWithDates', 'U') IS NOT NULL DROP TABLE #DedupedWithDates;
 
         SELECT a.*,
@@ -41,9 +38,6 @@ BEGIN
         LEFT JOIN gold.dim_date ORSHDT ON a.ORSHDT = ORSHDT.date_ordinal
         WHERE a.rn = 1;
 
-        /*========================================================
-          Step 1.5 (NEW): Delete from target ONLY for DISTINCT order_load_number in this run
-        ========================================================*/
         IF OBJECT_ID('tempdb..#OrdersToDelete', 'U') IS NOT NULL DROP TABLE #OrdersToDelete;
 
         SELECT DISTINCT TRIM(ORODR) AS order_load_number
@@ -56,116 +50,6 @@ BEGIN
         JOIN #OrdersToDelete D
           ON TGT.order_load_number = D.order_load_number;
 
-        /*========================================================
-          Step 2: UPDATE existing (will usually be 0 after delete; kept for consistency)
-        ========================================================*/
-        UPDATE TGT
-        SET
-            order_origin_area_code = TRIM(SRC.ORARA),
-            order_status_code = TRIM(SRC.ORSTAT),
-            order_date = SRC.ORDATE_key,
-            order_time = TRIM(SRC.ORTIME),
-            order_customer_code = TRIM(SRC.ORCUST),
-            order_consignee_code = TRIM(SRC.ORCONS),
-            order_billto_code = TRIM(SRC.ORBILL),
-            order_loadat_code = TRIM(SRC.ORLDAT),
-            order_early_pickup_date = SRC.ORPDAT_key,
-            order_early_pickup_time = TRIM(SRC.ORPTIM),
-            is_pickup_required = CASE TRIM(SRC.ORRPIK) WHEN 'Y' THEN 'TRUE' WHEN 'N' THEN 'FALSE' ELSE 'unknown' END,
-            order_early_delivery_date = SRC.ORDDAT_key,
-            order_early_delivery_time = TRIM(SRC.ORDTIM),
-            is_delivery_required = CASE TRIM(SRC.ORRDEL) WHEN 'Y' THEN 'TRUE' WHEN 'N' THEN 'FALSE' ELSE 'unknown' END,
-            order_commodity_code = TRIM(SRC.ORCOMC),
-            order_commodity_description = TRIM(SRC.ORCOMD),
-            order_creation_initials = TRIM(SRC.ORINIT),
-            order_customer_phone_area_code = CONVERT(VARCHAR, SRC.ORCAC),
-            order_customer_phone_number = CONVERT(VARCHAR, SRC.ORCPHN),
-            order_consignee_phone_area_code = CONVERT(VARCHAR, SRC.ORRAC),
-            order_consignee_phone_number = CONVERT(VARCHAR, SRC.ORRPHN),
-            order_load_weight = SRC.ORWGT,
-            order_pallet_count = TRIM(SRC.ORPLLT),
-            order_origin_city_code = TRIM(SRC.OROCTY),
-            order_origin_state = TRIM(SRC.OROST),
-            order_origin_bea_code = SRC.OROBEA,
-            order_origin_gu_code = TRIM(SRC.OROGU),
-            order_origin_city_short_name = TRIM(SRC.OROSNM),
-            order_destination_city_code = TRIM(SRC.ORDCTY),
-            order_destination_state = TRIM(SRC.ORDST),
-            order_destination_bea_code = SRC.ORDBEA,
-            order_destination_gu_code = TRIM(SRC.ORDGU),
-            order_destination_city_short_name = TRIM(SRC.ORDSNM),
-            order_miles_billable = SRC.ORMILE,
-            order_load_type = TRIM(SRC.ORRST),
-            order_stop_count = TRIM(SRC.ORSTP),
-            order_dispatch_count = TRIM(SRC.OR_DSP),
-            order_preload_trailer = TRIM(SRC.ORTRLR),
-            order_revenue_estimation = SRC.ORESTR,
-            order_new_origin_area_code = TRIM(SRC.ORNWPK),
-            order_destination_area_code = TRIM(SRC.ORINAR),
-            order_bill_of_lading = TRIM(SRC.ORCSH),
-            order_purchase_order = TRIM(SRC.ORCNS),
-            order_pick_up_code = TRIM(SRC.ORORBY),
-            order_piece_count = TRIM(SRC.ORPIEC),
-            order_collection_method_code = TRIM(SRC.ORPORC),
-            order_load_volume = TRIM(SRC.ORCUBE),
-            order_message = TRIM(SRC.ORSPEC),
-            order_late_pickup_date = SRC.ORAPDT_key,
-            order_late_pickup_time = TRIM(SRC.ORAPTM),
-            order_late_delivery_date = SRC.ORADDT_key,
-            order_late_delivery_time = TRIM(SRC.ORADTM),
-            order_required_pallet_count = SRC.ORPREQ,
-            order_ship_date = SRC.ORSHDT_key,
-            order_ship_time = TRIM(SRC.ORSHTM),
-            order_temp_high = SRC.ORTMPH,
-            order_temp_low = SRC.ORTMPL,
-            order_last_update_date = SRC.ORUPDD_key,
-            order_last_update_time = TRIM(SRC.ORUPDT),
-            order_last_update_initials = TRIM(SRC.ORUPDI),
-            order_company_code = TRIM(SRC.ORCO),
-            order_division_code = TRIM(SRC.ORDV),
-            order_lane_code = TRIM(SRC.ORTM),
-            order_seal_code = TRIM(SRC.ORSEL1),
-            order_service_failure_code = TRIM(SRC.ORSERV),
-            order_driver_commit_flag = TRIM(SRC.ORCMTM),
-            is_edi_load = TRIM(SRC.OREDI),
-            is_edi_stats_complete = TRIM(SRC.OREDIC),
-            is_driver_loaded = TRIM(SRC.ORDLD),
-            is_driver_unloaded = TRIM(SRC.ORDULD),
-            is_delivery_receipt_signed = TRIM(SRC.ORSDR),
-            order_delivery_receipt_req = TRIM(SRC.ORSDRR),
-            order_edi_message_billing_flag = TRIM(SRC.OREDMB),
-            is_load_just_in_time = TRIM(SRC.ORJIT),
-            order_edi_billing_code = TRIM(SRC.OREDFB),
-            is_edi_inbound_or_outbound = CASE TRIM(SRC.OREDIO) WHEN 'I' THEN 'INBOUND' WHEN 'O' THEN 'OUTBOUND' ELSE 'unknown' END,
-            order_current_city_code = TRIM(SRC.ORCCTY),
-            order_current_state = TRIM(SRC.ORCST),
-            order_loaded_call_date = SRC.ORLCDT_key,
-            order_empty_call_date = SRC.ORECDT_key,
-            order_trailer_length = SRC.ORLGT,
-            order_trailer_height = SRC.ORHGT,
-            has_permit = TRIM(SRC.ORPMTF),
-            has_permit_complete = TRIM(SRC.ORPCOM),
-            order_latitude = SRC.ORLAT,
-            order_longitude = SRC.ORLONG,
-            is_tentitive_load = TRIM(SRC.ORTEN),
-            order_hours_under_dispatch = SRC.ORHRS,
-            order_origin_zone_code = TRIM(SRC.OROZN),
-            order_origin_region_code = TRIM(SRC.ORORG),
-            order_destination_zone_code = TRIM(SRC.ORDZN),
-            order_destination_region_code = TRIM(SRC.ORDRG),
-            is_to_be_rated = TRIM(SRC.ORTBRT),
-            has_new_gu_code = TRIM(SRC.ORNGU),
-            is_exclude_from_model = TRIM(SRC.OREFM),
-            order_carry_over_flag = TRIM(SRC.ORCARF),
-            order_truck_type_requirement_code = TRIM(SRC.ORUTYP),
-            order_delivery_code = TRIM(SRC.ORFIL)
-        FROM silver.ibmi_incr_order_new TGT
-        JOIN #DedupedWithDates SRC
-          ON TGT.order_load_number = TRIM(SRC.ORODR);
-
-        /*========================================================
-          Step 3: INSERT new records not present in silver
-        ========================================================*/
         INSERT INTO silver.ibmi_incr_order_new (
             order_origin_area_code,
             order_load_number,
@@ -272,16 +156,43 @@ BEGIN
             TRIM(SRC.ORODR),
             TRIM(SRC.ORSTAT),
             SRC.ORDATE_key,
-            TRIM(SRC.ORTIME),
+
+            CASE 
+                WHEN SRC.ORTIME LIKE '%[^0-9]%' THEN NULL
+                WHEN CONVERT(INT, SRC.ORTIME) <= 2359
+                     AND LEN(TRIM(SRC.ORTIME)) = 4
+                     AND CONVERT(INT, RIGHT(TRIM(SRC.ORTIME), 2)) < 60
+                THEN CONVERT(TIME(0), CONCAT(LEFT(SRC.ORTIME, 2), ':', RIGHT(SRC.ORTIME, 2)))
+                ELSE NULL
+            END,
+
             TRIM(SRC.ORCUST),
             TRIM(SRC.ORCONS),
             TRIM(SRC.ORBILL),
             TRIM(SRC.ORLDAT),
             SRC.ORPDAT_key,
-            TRIM(SRC.ORPTIM),
+
+            CASE 
+                WHEN SRC.ORPTIM LIKE '%[^0-9]%' THEN NULL
+                WHEN CONVERT(INT, SRC.ORPTIM) <= 2359
+                     AND LEN(TRIM(SRC.ORPTIM)) = 4
+                     AND CONVERT(INT, RIGHT(TRIM(SRC.ORPTIM), 2)) < 60
+                THEN CONVERT(TIME(0), CONCAT(LEFT(SRC.ORPTIM, 2), ':', RIGHT(SRC.ORPTIM, 2)))
+                ELSE NULL
+            END,
+
             CASE TRIM(SRC.ORRPIK) WHEN 'Y' THEN 'TRUE' WHEN 'N' THEN 'FALSE' ELSE 'unknown' END,
             SRC.ORDDAT_key,
-            TRIM(SRC.ORDTIM),
+
+            CASE 
+                WHEN SRC.ORDTIM LIKE '%[^0-9]%' THEN NULL
+                WHEN CONVERT(INT, SRC.ORDTIM) <= 2359
+                     AND LEN(TRIM(SRC.ORDTIM)) = 4
+                     AND CONVERT(INT, RIGHT(TRIM(SRC.ORDTIM), 2)) < 60
+                THEN CONVERT(TIME(0), CONCAT(LEFT(SRC.ORDTIM, 2), ':', RIGHT(SRC.ORDTIM, 2)))
+                ELSE NULL
+            END,
+
             CASE TRIM(SRC.ORRDEL) WHEN 'Y' THEN 'TRUE' WHEN 'N' THEN 'FALSE' ELSE 'unknown' END,
             TRIM(SRC.ORCOMC),
             TRIM(SRC.ORCOMD),
@@ -318,16 +229,52 @@ BEGIN
             TRIM(SRC.ORCUBE),
             TRIM(SRC.ORSPEC),
             SRC.ORAPDT_key,
-            TRIM(SRC.ORAPTM),
+
+            CASE 
+                WHEN SRC.ORAPTM LIKE '%[^0-9]%' THEN NULL
+                WHEN CONVERT(INT, SRC.ORAPTM) <= 2359
+                     AND LEN(TRIM(SRC.ORAPTM)) = 4
+                     AND CONVERT(INT, RIGHT(TRIM(SRC.ORAPTM), 2)) < 60
+                THEN CONVERT(TIME(0), CONCAT(LEFT(SRC.ORAPTM, 2), ':', RIGHT(SRC.ORAPTM, 2)))
+                ELSE NULL
+            END,
+
             SRC.ORADDT_key,
-            TRIM(SRC.ORADTM),
+
+            CASE 
+                WHEN SRC.ORADTM LIKE '%[^0-9]%' THEN NULL
+                WHEN CONVERT(INT, SRC.ORADTM) <= 2359
+                     AND LEN(TRIM(SRC.ORADTM)) = 4
+                     AND CONVERT(INT, RIGHT(TRIM(SRC.ORADTM), 2)) < 60
+                THEN CONVERT(TIME(0), CONCAT(LEFT(SRC.ORADTM, 2), ':', RIGHT(SRC.ORADTM, 2)))
+                ELSE NULL
+            END,
+
             SRC.ORPREQ,
             SRC.ORSHDT_key,
-            TRIM(SRC.ORSHTM),
+
+            CASE 
+                WHEN SRC.ORSHTM LIKE '%[^0-9]%' THEN NULL
+                WHEN CONVERT(INT, SRC.ORSHTM) <= 2359
+                     AND LEN(TRIM(SRC.ORSHTM)) = 4
+                     AND CONVERT(INT, RIGHT(TRIM(SRC.ORSHTM), 2)) < 60
+                THEN CONVERT(TIME(0), CONCAT(LEFT(SRC.ORSHTM, 2), ':', RIGHT(SRC.ORSHTM, 2)))
+                ELSE NULL
+            END,
+
             SRC.ORTMPH,
             SRC.ORTMPL,
             SRC.ORUPDD_key,
-            TRIM(SRC.ORUPDT),
+
+            CASE 
+                WHEN SRC.ORUPDT LIKE '%[^0-9]%' THEN NULL
+                WHEN CONVERT(INT, SRC.ORUPDT) <= 2359
+                     AND LEN(TRIM(SRC.ORUPDT)) = 4
+                     AND CONVERT(INT, RIGHT(TRIM(SRC.ORUPDT), 2)) < 60
+                THEN CONVERT(TIME(0), CONCAT(LEFT(SRC.ORUPDT, 2), ':', RIGHT(SRC.ORUPDT, 2)))
+                ELSE NULL
+            END,
+
             TRIM(SRC.ORUPDI),
             TRIM(SRC.ORCO),
             TRIM(SRC.ORDV),
@@ -383,6 +330,7 @@ BEGIN
         IF @@TRANCOUNT > 0 ROLLBACK TRAN;
 
         DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+
         RAISERROR('usp_ibmi_incr_order_silver_new failed. %s', 16, 1, @ErrMsg) WITH NOWAIT;
     END CATCH
-END
+END;
