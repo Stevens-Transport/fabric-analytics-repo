@@ -11,10 +11,10 @@ Usage:              EXEC dbo.usp_ibmi_earnings_history
 SUMMARY OF CHANGES
 Date(yyyy-mm-dd)    Author              Comments
 ------------------- ------------------ ------------------------------------------------------------
-1                   
+1 2026-07-10        Jeremy Shahan       Fixed time conversion of EHATIM                  
 ***************************************************************************************************/
 
-CREATE   PROCEDURE [dbo].[usp_ibmi_earnings_history_silver]
+CREATE     PROCEDURE [dbo].[usp_ibmi_earnings_history_silver]
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -95,7 +95,7 @@ BEGIN
         , CASE WHEN TRIM(a.EHHOLD) = 'H' THEN 'TRUE' ELSE 'FALSE' END AS is_on_hold
         , TRIM(a.EHAUSR)  AS earnings_history_audit_user_code
         , EHADAT.date_key_pk AS earnings_history_audit_date
-        , CASE LEN(CONVERT(VARCHAR, a.EHATIM))
+        , CASE LEN(CONVERT(VARCHAR,CONVERT(INT,a.EHATIM)))
               WHEN 5 THEN CONVERT(TIME, CONCAT(
                                 LEFT(CONCAT('0', CONVERT(VARCHAR, a.EHATIM)), 2), ':',
                                 SUBSTRING(CONCAT('0', CONVERT(VARCHAR, a.EHATIM)), 3, 2)))

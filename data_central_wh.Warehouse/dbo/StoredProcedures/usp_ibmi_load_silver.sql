@@ -10,9 +10,9 @@ Usage:              EXEC dbo.usp_ibmi_load_silver
 
 ****************************************************************************************************
 SUMMARY OF CHANGES
-#             Date(yyyy-mm-dd)    Author              Comments
+# Date(yyyy-mm-dd)    Author              Comments
 ------------------- ------------------ ------------------------------------------------------------
-1            
+1 2026-07-10        Jeremy Shahan       Converted Time fields   
 ***************************************************************************************************/
 
 CREATE PROCEDURE [dbo].[usp_ibmi_load_silver]
@@ -65,7 +65,14 @@ SELECT
     TRIM(a.DIDISP),
     TRIM(a.DILDST),
     DIDATE.date_key_pk,
-    TRIM(a.DITIME),
+    CASE 
+        WHEN a.DITIME LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.DITIME) <= 2359 
+		    AND LEN(TRIM(a.DITIME)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.DITIME),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.DITIME,2),':',RIGHT(a.DITIME,2)))
+		ELSE NULL 
+        END,
     TRIM(a.DIUNIT),
     TRIM(a.DITRLR),
     TRIM(a.DIDR1),
@@ -80,7 +87,14 @@ SELECT
     TRIM(a.DIAREA),
     TRIM(a.DICONT),
     DIETAD.date_key_pk,
-    TRIM(a.DIETAT),
+    CASE 
+        WHEN a.DIETAT LIKE '%[^0-9]%' THEN NULL
+	    WHEN CONVERT(INT, a.DIETAT) <= 2359 
+		    AND LEN(TRIM(a.DIETAT)) = 4 
+			AND CONVERT(INT,RIGHT(TRIM(a.DIETAT),2)) < 60
+		THEN CONVERT(TIME(0),CONCAT(LEFT(a.DIETAT,2),':',RIGHT(a.DIETAT,2)))
+		ELSE NULL 
+        END,
     TRIM(a.DIMTRL),
     TRIM(a.DISTST),
     TRIM(a.DIAPRV),
