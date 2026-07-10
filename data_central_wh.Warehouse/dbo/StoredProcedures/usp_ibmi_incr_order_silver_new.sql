@@ -1,4 +1,4 @@
-CREATE   PROCEDURE [dbo].[usp_ibmi_incr_order_silver_new]
+CREATE       PROCEDURE [dbo].[usp_ibmi_incr_order_silver_new]
 AS
 BEGIN
     SET NOCOUNT ON;
