@@ -1,6 +1,6 @@
 {
   "name": "{{Dataset_Name}}",
-  "compatibilityLevel": 1604,
+  "compatibilityLevel": 1606,
   "model": {
     "name": "{{Dataset_Name}}",
     "culture": "en-US",
@@ -52038,20 +52038,6 @@
             ]
           },
           {
-            "name": "cd_order_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "cd_order_customer_code",
             "dataType": "string",
             "sourceColumn": "cd_order_customer_code",
@@ -52123,20 +52109,6 @@
             ]
           },
           {
-            "name": "cd_order_early_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_early_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_early_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_pickup_required",
             "dataType": "string",
             "sourceColumn": "is_pickup_required",
@@ -52157,20 +52129,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "cd_order_early_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "cd_order_early_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_early_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_early_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -52705,40 +52663,12 @@
             ]
           },
           {
-            "name": "cd_order_late_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_late_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_late_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "cd_order_late_delivery_date",
             "dataType": "dateTime",
             "sourceColumn": "cd_order_late_delivery_date",
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "cd_order_late_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "cd_order_late_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_late_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_late_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -52772,20 +52702,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "cd_order_ship_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "order_ship_time",
-            "dataType": "string",
-            "sourceColumn": "order_ship_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_ship_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -52837,20 +52753,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "cd_order_last_update_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "cd_order_last_update_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_last_update_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -53434,6 +53336,111 @@
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_early_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_early_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_early_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_early_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_early_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_early_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_late_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_late_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_late_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_late_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_late_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_late_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_ship_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_ship_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_ship_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_last_update_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_last_update_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -63982,20 +63989,6 @@
             ]
           },
           {
-            "name": "cd_order_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "cd_order_customer_code",
             "dataType": "string",
             "sourceColumn": "cd_order_customer_code",
@@ -64593,20 +64586,6 @@
             ]
           },
           {
-            "name": "order_ship_time",
-            "dataType": "string",
-            "sourceColumn": "order_ship_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_ship_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "cd_order_temp_high",
             "dataType": "double",
             "sourceColumn": "cd_order_temp_high",
@@ -64658,20 +64637,6 @@
             ]
           },
           {
-            "name": "cd_order_last_update_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_last_update_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_last_update_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "cd_order_message",
             "dataType": "string",
             "sourceColumn": "cd_order_message",
@@ -64701,40 +64666,12 @@
             ]
           },
           {
-            "name": "cd_order_late_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_late_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_late_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "cd_order_late_delivery_date",
             "dataType": "dateTime",
             "sourceColumn": "cd_order_late_delivery_date",
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "cd_order_late_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "cd_order_late_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_late_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_late_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -65217,20 +65154,6 @@
             ]
           },
           {
-            "name": "cd_order_early_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_early_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_early_delivery_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_delivery_required",
             "dataType": "string",
             "sourceColumn": "is_delivery_required",
@@ -65344,20 +65267,6 @@
             ]
           },
           {
-            "name": "cd_order_early_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "cd_order_early_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "cd_order_early_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_pickup_required",
             "dataType": "string",
             "sourceColumn": "is_pickup_required",
@@ -65378,6 +65287,111 @@
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_early_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_early_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_early_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_early_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_early_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_early_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_late_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_late_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_late_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_late_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_late_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_late_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_ship_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_ship_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_ship_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cd_order_last_update_time",
+            "dataType": "dateTime",
+            "sourceColumn": "cd_order_last_update_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "cd_order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -66617,20 +66631,6 @@
             ]
           },
           {
-            "name": "load_dispatch_end_time",
-            "dataType": "string",
-            "sourceColumn": "load_dispatch_end_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "load_dispatch_end_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "load_multiple_trailers_on_dispatch",
             "dataType": "string",
             "sourceColumn": "load_multiple_trailers_on_dispatch",
@@ -66747,20 +66747,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "load_dispatch_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "load_dispatch_time",
-            "dataType": "string",
-            "sourceColumn": "load_dispatch_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "load_dispatch_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -66888,6 +66874,36 @@
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "load_dispatch_time",
+            "dataType": "dateTime",
+            "sourceColumn": "load_dispatch_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "load_dispatch_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "load_dispatch_end_time",
+            "dataType": "dateTime",
+            "sourceColumn": "load_dispatch_end_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "load_dispatch_end_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -72252,20 +72268,6 @@
             ]
           },
           {
-            "name": "order_time",
-            "dataType": "string",
-            "sourceColumn": "order_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "order_customer_code",
             "dataType": "string",
             "sourceColumn": "order_customer_code",
@@ -72863,20 +72865,6 @@
             ]
           },
           {
-            "name": "order_ship_time",
-            "dataType": "string",
-            "sourceColumn": "order_ship_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_ship_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "order_temp_high",
             "dataType": "double",
             "sourceColumn": "order_temp_high",
@@ -72928,20 +72916,6 @@
             ]
           },
           {
-            "name": "order_last_update_time",
-            "dataType": "string",
-            "sourceColumn": "order_last_update_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_last_update_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "order_message",
             "dataType": "string",
             "sourceColumn": "order_message",
@@ -72971,40 +72945,12 @@
             ]
           },
           {
-            "name": "order_late_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "order_late_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_late_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "order_late_delivery_date",
             "dataType": "dateTime",
             "sourceColumn": "order_late_delivery_date",
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "order_late_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "order_late_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "order_late_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_late_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -73487,20 +73433,6 @@
             ]
           },
           {
-            "name": "order_early_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "order_early_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_early_delivery_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_delivery_required",
             "dataType": "string",
             "sourceColumn": "is_delivery_required",
@@ -73614,20 +73546,6 @@
             ]
           },
           {
-            "name": "order_early_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "order_early_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_early_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_pickup_required",
             "dataType": "string",
             "sourceColumn": "is_pickup_required",
@@ -73648,6 +73566,111 @@
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_early_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_early_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_early_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_early_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_early_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_early_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_late_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_late_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_late_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_late_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_late_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_late_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_ship_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_ship_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_ship_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_last_update_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_last_update_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -76935,20 +76958,6 @@
             ]
           },
           {
-            "name": "tlb_order_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "tlb_order_customer_code",
             "dataType": "string",
             "sourceColumn": "tlb_order_customer_code",
@@ -77546,20 +77555,6 @@
             ]
           },
           {
-            "name": "order_ship_time",
-            "dataType": "string",
-            "sourceColumn": "order_ship_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_ship_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "tlb_order_temp_high",
             "dataType": "double",
             "sourceColumn": "tlb_order_temp_high",
@@ -77611,20 +77606,6 @@
             ]
           },
           {
-            "name": "tlb_order_last_update_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_last_update_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_last_update_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "tlb_order_message",
             "dataType": "string",
             "sourceColumn": "tlb_order_message",
@@ -77654,40 +77635,12 @@
             ]
           },
           {
-            "name": "tlb_order_late_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_late_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_late_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "tlb_order_late_delivery_date",
             "dataType": "dateTime",
             "sourceColumn": "tlb_order_late_delivery_date",
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "tlb_order_late_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "tlb_order_late_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_late_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_late_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -78170,20 +78123,6 @@
             ]
           },
           {
-            "name": "tlb_order_early_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_early_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_early_delivery_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_delivery_required",
             "dataType": "string",
             "sourceColumn": "is_delivery_required",
@@ -78297,20 +78236,6 @@
             ]
           },
           {
-            "name": "tlb_order_early_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_early_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_early_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_pickup_required",
             "dataType": "string",
             "sourceColumn": "is_pickup_required",
@@ -78331,6 +78256,111 @@
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_early_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_early_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_early_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_early_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_early_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_early_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_late_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_late_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_late_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_late_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_late_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_late_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_ship_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_ship_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_ship_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_last_update_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_last_update_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -79585,10 +79615,26 @@
             ]
           },
           {
+            "name": "is_deleted",
+            "dataType": "boolean",
+            "sourceColumn": "is_deleted",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
             "name": "load_dispatch_time",
-            "dataType": "string",
+            "dataType": "dateTime",
             "sourceColumn": "load_dispatch_time",
-            "sourceProviderType": "varchar",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
             "sourceLineageTag": "load_dispatch_time",
             "summarizeBy": "none",
             "annotations": [
@@ -79600,25 +79646,11 @@
           },
           {
             "name": "load_dispatch_end_time",
-            "dataType": "string",
+            "dataType": "dateTime",
             "sourceColumn": "load_dispatch_end_time",
-            "sourceProviderType": "varchar",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
             "sourceLineageTag": "load_dispatch_end_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "is_deleted",
-            "dataType": "boolean",
-            "sourceColumn": "is_deleted",
-            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
-            "sourceProviderType": "bit",
-            "sourceLineageTag": "is_deleted",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -80651,20 +80683,6 @@
             ]
           },
           {
-            "name": "order_time",
-            "dataType": "string",
-            "sourceColumn": "order_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "order_customer_code",
             "dataType": "string",
             "sourceColumn": "order_customer_code",
@@ -80736,20 +80754,6 @@
             ]
           },
           {
-            "name": "order_early_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "order_early_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_early_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_pickup_required",
             "dataType": "string",
             "sourceColumn": "is_pickup_required",
@@ -80770,20 +80774,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "order_early_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "order_early_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "order_early_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_early_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -81302,40 +81292,12 @@
             ]
           },
           {
-            "name": "order_late_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "order_late_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_late_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "order_late_delivery_date",
             "dataType": "dateTime",
             "sourceColumn": "order_late_delivery_date",
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "order_late_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "order_late_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "order_late_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_late_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -81366,20 +81328,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "order_ship_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "order_ship_time",
-            "dataType": "string",
-            "sourceColumn": "order_ship_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_ship_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -81425,20 +81373,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "order_last_update_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "order_last_update_time",
-            "dataType": "string",
-            "sourceColumn": "order_last_update_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -82013,6 +81947,111 @@
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_early_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_early_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_early_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_early_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_early_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_early_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_late_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_late_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_late_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_late_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_late_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_late_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_ship_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_ship_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_ship_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "order_last_update_time",
+            "dataType": "dateTime",
+            "sourceColumn": "order_last_update_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -88952,20 +88991,6 @@
             ]
           },
           {
-            "name": "tlb_order_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "tlb_order_customer_code",
             "dataType": "string",
             "sourceColumn": "tlb_order_customer_code",
@@ -89037,20 +89062,6 @@
             ]
           },
           {
-            "name": "tlb_order_early_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_early_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_early_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "is_pickup_required",
             "dataType": "string",
             "sourceColumn": "is_pickup_required",
@@ -89071,20 +89082,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "tlb_order_early_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "tlb_order_early_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_early_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_early_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -89619,40 +89616,12 @@
             ]
           },
           {
-            "name": "tlb_order_late_pickup_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_late_pickup_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_late_pickup_time",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "tlb_order_late_delivery_date",
             "dataType": "dateTime",
             "sourceColumn": "tlb_order_late_delivery_date",
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "tlb_order_late_delivery_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "tlb_order_late_delivery_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_late_delivery_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_late_delivery_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -89686,20 +89655,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "tlb_order_ship_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "order_ship_time",
-            "dataType": "string",
-            "sourceColumn": "order_ship_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "order_ship_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -89751,20 +89706,6 @@
             "formatString": "General Date",
             "sourceProviderType": "date",
             "sourceLineageTag": "tlb_order_last_update_date",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "tlb_order_last_update_time",
-            "dataType": "string",
-            "sourceColumn": "tlb_order_last_update_time",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "tlb_order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -90348,6 +90289,111 @@
             "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
             "sourceProviderType": "bit",
             "sourceLineageTag": "is_deleted",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_early_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_early_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_early_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_early_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_early_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_early_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_late_pickup_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_late_pickup_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_late_pickup_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_late_delivery_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_late_delivery_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_late_delivery_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_ship_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_ship_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_ship_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tlb_order_last_update_time",
+            "dataType": "dateTime",
+            "sourceColumn": "tlb_order_last_update_time",
+            "formatString": "General Date",
+            "sourceProviderType": "time",
+            "sourceLineageTag": "tlb_order_last_update_time",
             "summarizeBy": "none",
             "annotations": [
               {
