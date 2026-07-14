@@ -58,7 +58,7 @@ from zoneinfo import ZoneInfo
 # ---------------------- CONFIG ------------------------------
 vl = notebookutils.variableLibrary.getLibrary("vl_fabricConfig")
 
-SERVER   = "lofzv5bdxbxepf3ufbs6kug4du-p5wmllx2r55e7m7glgprufxpe4.datawarehouse.fabric.microsoft.com"
+SERVER   = vl.serverName
 DATABASE = vl.warehouseName
 SOURCE_VIEW      = "gold.vw_ibmi_driver"
 REFERENCE_TABLE  = "stg_driver_code_reference_table"   # main output (default lakehouse)

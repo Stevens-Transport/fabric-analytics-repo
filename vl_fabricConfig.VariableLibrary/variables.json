@@ -24,6 +24,12 @@
       "note": "",
       "type": "String",
       "value": "data_central_wh"
+    },
+    {
+      "name": "serverName",
+      "note": "",
+      "type": "String",
+      "value": "lofzv5bdxbxepf3ufbs6kug4du-dpb5fjqdbnqezisyyjteyvx6hu.datawarehouse.fabric.microsoft.com"
     }
   ]
 }
